@@ -21,8 +21,22 @@ body{
     background-color: var(--VeryLightGray);
 }
 
-.container{
-    margin: 90px 30px;
+.box{
+    background: linear-gradient(45deg, #000, #323232);
+    margin: 10px;
+}
+
+.animate-bg:before, .animate-bg:after{
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    background: linear-gradient(120deg, hsl(0, 78%, 62%), hsl(180, 62%, 55%), hsl(34, 97%, 64%));
+    background-size: 400%;
+    width: calc(100% + 150px);
+    height: calc(100% + 150px);
+    z-index: -1;
+    animation: ColorO 15s linear infinite;
 }
 
 /*---------------------Header---------------------*/
@@ -31,6 +45,7 @@ header{
 }
 
 header h1{
+    color: #ffff;
     font-weight: 200;
     font-size: 1.6em;
     margin: 0;
@@ -38,6 +53,7 @@ header h1{
 }
 
 header h2{
+    color: dimgrey;
     font-weight: 600;
     font-size: 1.6em;
     margin: 0;
@@ -162,4 +178,16 @@ header p{
 @keyframes rightleft{
     0%{transform:  translateX(500px);}
     100%{transform: translateX(0px);}
+}
+/*---------------------Animaciones-Orilla---------------------*/
+@keyframes ColorO{
+    0%{
+        background-position: 0% 200%;
+    }
+    50%{
+        background-position: 200% 0%;
+    }
+    100%{
+        background-position: 0% 330%;
+    }
 }
